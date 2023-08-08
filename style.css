@@ -1,0 +1,112 @@
+:root {
+    --text-color: rgb(200, 216, 214);
+    --header-bg-color: rgb(11, 22, 31);
+    --body-bg-color: rgb(9, 18, 26);
+}
+[data-theme="light"] {
+    --text-color: rgb(32, 32, 32);
+    --header-bg-color: rgb(212, 221, 230);
+    --body-bg-color: rgb(199, 205, 210);
+}
+
+body {
+    background-color: var(--body-bg-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif   ;
+}
+
+.head {
+    background-color: var(--header-bg-color);
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.theme-switch-wrapper {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.theme-text {
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.theme-switch {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    margin: 0 auto;
+
+    container-type: inline-size;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: rgb(204 204 213);
+    cursor: pointer;
+    transition: .9s;
+    height: 22px;
+    padding: 4px;
+    border-radius: 22px;
+}
+
+.slider:before {
+    background-color: rgb(11, 22, 31);
+    content: "";
+    display: block;
+    height: 22px;
+    width: 22px;
+    transition: .9s;
+}
+
+#theme-checkbox:checked + .slider {
+    background-color: #6775bd;
+}
+
+#theme-checkbox:checked + .slider:before {
+    transform: translateX(calc(100cqw - 100% - 10px));
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-size: 36px;
+    padding: 0 10px 0 20px;
+    font-family: fantasy;
+    letter-spacing: 3px;
+}
+
+.profile-image-top {
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.profile-image-top:hover {
+    padding: 5px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.content {
+    margin: 40px;
+}
+
+.no-content-text {
+    font-size: 36px;
+    text-align: center;
+}

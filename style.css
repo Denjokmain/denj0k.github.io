@@ -1,10 +1,17 @@
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/Roboto-Black.ttf');
+}
+
 :root {
     --text-color: rgb(200, 216, 214);
+    --header-selected-menu-text-color: rgb(44, 153, 153);
     --header-bg-color: rgb(11, 22, 31);
     --body-bg-color: rgb(9, 18, 26);
 }
 [data-theme="light"] {
     --text-color: rgb(32, 32, 32);
+    --header-selected-menu-text-color: rgb(50, 130, 130);
     --header-bg-color: rgb(212, 221, 230);
     --body-bg-color: rgb(199, 205, 210);
 }
@@ -14,10 +21,10 @@ body {
     margin: 0;
     padding: 0;
     color: var(--text-color);
-    font-family: Arial, Helvetica, sans-serif   ;
+    font-family: 'Thin', 'roboto';
 }
 
-.btn {
+.pointer {
     cursor: pointer;
 }
 
@@ -26,7 +33,16 @@ body {
     font-size: 26px;
     display: flex;
     align-items: center;
+    gap: 40px;
+}
+
+.header-menu {
     gap: 30px;
+    display: flex;
+}
+
+.selected-menu {
+    color: var(--header-selected-menu-text-color);
 }
 
 .theme-switch-wrapper {
@@ -86,8 +102,8 @@ body {
 
 .profile-name {
     font-size: 36px;
-    padding: 0 10px 0 20px;
-    font-family: fantasy;
+    padding: 0 30px 0 20px;
+    font-family: 'bold', 'roboto', 'italic';
     letter-spacing: 3px;
 }
 

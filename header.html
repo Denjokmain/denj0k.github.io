@@ -1,6 +1,8 @@
-<span class="profile-name btn" onclick="changeLocation('main')">Денис</span>
-<span class="btn" onclick="changeLocation('images')">Картинки</span></a>
-<span class="btn" onclick="changeLocation('main')">Фан проекты</span>
+<span class="profile-name pointer" name="main">Денис</span>
+<div class="header-menu">
+    <span class="pointer" name="images">Картинки</span></a>
+    <span class="pointer" name="projects">Фан проекты</span>
+</div>
 <div class="theme-switch-wrapper">
     <label class="theme-text">Тёмная | Светлая</label>
     <label class="theme-switch" for="theme-checkbox">
@@ -16,10 +18,23 @@
         localStorage.setItem('theme', theme)
     }
 
+    function changeLocation() {
+        window.location.hash = $(this).attr('name')
+        updateSelectedDraw()
+    }
+    function updateSelectedDraw() {
+        $('.profile-name').removeClass('selected-menu')
+        $(headerMenuElements).removeClass('selected-menu')
+        $(`[name='${window.location.hash.slice(1)}']`).addClass('selected-menu')
+    }
+
     const themeSwitchBtn = document.querySelector('#theme-checkbox');
     const currentTheme = localStorage.getItem('theme');
+    const headerMenuElements = document.querySelector('.header-menu').children
+    
+    $('.profile-name').click(changeLocation)
+    $(headerMenuElements).click(changeLocation)
 
-        
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme)
         if (currentTheme === 'light') {themeSwitchBtn.checked = true}

@@ -1,13 +1,33 @@
-<!-- <div class="head"> -->
-    <span class="profile-name">Денис</span>
-    <span>Картинки</span>
-    <span>Фан проекты</span>
-    <div class="theme-switch-wrapper">
-        <label class="theme-text">Тёмная | Светлая</label>
-        <label class="theme-switch" for="theme-checkbox">
-            <input type="checkbox" id="theme-checkbox">
-            <div class="slider round"></div>
-        </label>
-    </div>
-    <img class="profile-image-top" src="images/profile.jpeg" >
-<!-- </div> -->
+<span class="profile-name">Денис</span>
+<span>Картинки</span>
+<span>Фан проекты</span>
+<div class="theme-switch-wrapper">
+    <label class="theme-text">Тёмная | Светлая</label>
+    <label class="theme-switch" for="theme-checkbox">
+        <input type="checkbox" id="theme-checkbox">
+        <div class="slider round"></div>
+    </label>
+</div>
+<img class="profile-image-top" src="images/profile.jpeg" >
+<script>
+    function switchTheme() {
+        let theme = themeSwitchBtn.checked ? 'light':'dark'
+        document.documentElement.setAttribute('data-theme', theme)
+        localStorage.setItem('theme', theme)
+    }
+
+    const themeSwitchBtn = document.querySelector('#theme-checkbox');
+    const currentTheme = localStorage.getItem('theme');
+
+        
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme)
+        if (currentTheme === 'light') {themeSwitchBtn.checked = true}
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+
+
+    themeSwitchBtn.addEventListener('change', switchTheme, false)
+    switchTheme()
+</script>

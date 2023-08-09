@@ -1,3 +1,4 @@
+$('.header').load("header.html");
 const themeSwitchBtn = document.querySelector('#theme-checkbox');
 const currentTheme = localStorage.getItem('theme');
 

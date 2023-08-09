@@ -17,6 +17,10 @@ body {
     font-family: Arial, Helvetica, sans-serif   ;
 }
 
+.btn {
+    cursor: pointer;
+}
+
 .header {
     background-color: var(--header-bg-color);
     font-size: 26px;

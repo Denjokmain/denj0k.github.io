@@ -23,6 +23,7 @@
         updateSelectedDraw()
     }
     function updateSelectedDraw() {
+        if (window.location.hash == '') {window.location.hash = 'main'}
         $('.profile-name').removeClass('selected-menu')
         $(headerMenuElements).removeClass('selected-menu')
         $(`[name='${window.location.hash.slice(1)}']`).addClass('selected-menu')
@@ -42,7 +43,7 @@
         document.documentElement.setAttribute('data-theme', 'dark')
     }
 
-
     themeSwitchBtn.addEventListener('change', switchTheme, false)
     switchTheme()
+    updateSelectedDraw()
 </script>

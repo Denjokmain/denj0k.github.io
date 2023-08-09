@@ -39,6 +39,8 @@ body {
 .header-menu {
     gap: 30px;
     display: flex;
+    text-align: center;
+    align-items: center;
 }
 
 .selected-menu {

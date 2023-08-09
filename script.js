@@ -8,4 +8,4 @@ function changeLocation(attr) {
 console.log($(location).attr('href'))
 $('.content').load("main.html");
 
-window.onhashchange = function() { $('.content').load(window.location.hash + '.html'); }
+window.onhashchange = function() { $('.content').load(window.location.hash.slice(1) + '.html'); }

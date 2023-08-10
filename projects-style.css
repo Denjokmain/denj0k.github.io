@@ -1,0 +1,86 @@
+:root {
+    --card-bg: rgb(57, 57, 70);
+    --link-text-color: rgb(63, 52, 209);
+    --fly-box-bg: rgb(10, 10, 10);
+    --fly-box-iamges-bg: rgb(11, 22, 31);
+}
+[data-theme="light"] {
+    --card-bg: rgb(168, 173, 183);
+    --fly-box-bg: rgb(44, 40, 40);
+    --fly-box-iamges-bg: rgb(212, 221, 230);
+}
+
+.cards {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card a {
+    text-decoration: none;
+    color: var(--link-text-color);
+    transition: .6s;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg);
+    /* background-color: bisque; */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.card-title {
+    cursor: pointer;
+}
+
+.card-link {
+    margin-top: auto;
+}
+
+.card-image {
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.card-info-box {
+    padding: 20px;
+    gap: 16px;
+    display: flex;
+    max-width: 100%;
+    width: 100% ;
+    flex-direction: column;
+}
+
+.card-info-box h2 {
+    margin: 0 0 10px 0;
+}
+
+.card-top-content {
+    display: flex;
+}
+
+.card-images-box {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--fly-box-iamges-bg);
+    display: flex;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.card-image-container {
+    display: flex;
+}
+
+.card-image-container img {
+    height: 80px;
+    border-radius: 10px;
+}
+
+.card-images {
+    transition: .2s;
+    transition-delay: .08s;
+}

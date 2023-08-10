@@ -104,7 +104,7 @@ body {
 
 .profile-name {
     font-size: 36px;
-    padding: 0 30px 0 20px;
+    margin: 0 30px 0 20px;
     font-family: 'bold', 'roboto', 'italic';
     letter-spacing: 3px;
 }

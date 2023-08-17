@@ -2,26 +2,32 @@
 <script>document.title = 'Фан проекты'</script>
 <!-- <p class="no-content-text">Страничка с фан проектами</p> -->
 <div class="cards"></div>
-</div>
-</div>
+<div class="image-describe-box"><div onclick="hideImage()" class="close-btn image-describe-close"><div></div></div></div>
 <script>
     var flyBox = $('.describe-fly-box')
     flyBox.hide()
+    $('.image-describe-box').hide()
 
-    function setImageToCenter() {
-        let pos = $(this).position()
-        $(this).css({
-            'transition': '.2s',
-            'transform': `scale(3) translate(30%, -${30}px)`
-            // 'transform': `scale(${(height-320)/height2}) translate(${-transform[0]}px, -${transform[1]}px)`
+    function showImage() {
+        $(document).keyup(function(e) {
+            if (e.key === "Escape") { // escape key maps to keycode `27`
+                hideImage()
+            }
+        });
+        $('.image-describe-box').show()
+        $('.image-describe-box').css({
+            'background-image': `url(${$(this).attr('src')})`,
         })
+        
+        // $(this).css({
+        //     'transition': '.2s',
+        //     'transform': `scale(3) translate(30%, -${30}px)`
+        //     // 'transform': `scale(${(height-320)/height2}) translate(${-transform[0]}px, -${transform[1]}px)`
+        // })
     }
 
-    function setImageBack() {
-        $(this).css({
-            'transition': '0s',
-            'transform': ''
-        })
+    function hideImage() {
+        $('.image-describe-box').hide()
     }
 
     function addProject(data) {
@@ -42,7 +48,7 @@
                 <div class="card-images-box">${images}</div>
             </div>
         `)
-        $('.card-images').hover(setImageToCenter, setImageBack)
+        $('.card-images').click(showImage)
     }
     var projects = {}
     $.getJSON('fun-projects/info.json', function(data) {
